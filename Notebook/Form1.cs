@@ -1,0 +1,11 @@
+namespace Notebook {
+    public partial class Form1 : Form {
+        public Form1() {
+            InitializeComponent();
+        }
+
+        private void OnClose(object sender, FormClosedEventArgs e) {
+            Application.Exit();
+        }
+    }
+}
