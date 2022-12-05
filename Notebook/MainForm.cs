@@ -1,6 +1,9 @@
 namespace Notebook {
     public partial class MainForm : Form {
+        public List<Note> notes = new List<Note>();
+
         NoteEditForm noteEditForm = new NoteEditForm();
+
         public MainForm() {
             InitializeComponent();
         }

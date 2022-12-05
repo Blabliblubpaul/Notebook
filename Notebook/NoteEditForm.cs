@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-namespace Notebook {
+﻿namespace Notebook {
     public partial class NoteEditForm : Form {
-        public NoteEditForm() {
+        Note note;
+        bool newNote = false;
+
+        public NoteEditForm(Note? note = null) {
             InitializeComponent();
+
+            if (note == null) {
+                this.note = new Note();
+            }
+            else {
+                this.note = note;
+                newNote = true;
+            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e) {
-            this.Hide();
+            Hide();
             try {
                 Common.GetFormByName("MainForm").Show();
             }
@@ -18,19 +24,25 @@ namespace Notebook {
         }
 
         private void cancelBtn_Click(object sender, EventArgs e) {
-            this.Hide();
-            try {
-                Common.GetFormByName("MainForm").Show();
-            }
-            catch { }
+            Hide();
+            Program.mainForm.Show();
         }
 
         private void NoteEditForm_FormClosed(object sender, FormClosedEventArgs e) {
-            this.Hide();
-            try {
-                Common.GetFormByName("MainForm").Show();
+            Hide();
+            Program.mainForm.Show();
+        }
+
+        private void Show(Note? note = null) {
+            if (note == null) {
+                this.note = new Note();
             }
-            catch { }
+            else {
+                this.note = note;
+                newNote = true;
+            }
+
+            Show();
         }
     }
 }
