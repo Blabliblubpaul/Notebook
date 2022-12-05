@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace Notebook {
     public partial class MainForm : Form {
+        NoteEditForm noteEditForm = new NoteEditForm();
         public MainForm() {
             InitializeComponent();
         }
@@ -12,9 +13,13 @@ namespace Notebook {
 
         private void newNoteBtn_Click(object sender, EventArgs e) {
             this.Hide();
-            NoteEditForm noteEditForm = new NoteEditForm();
-            noteEditForm.Show();
-            this.Close();
+            try {
+                Common.GetFormByName("NoteEditForm").Show();
+            }
+            catch {
+                noteEditForm = new NoteEditForm();
+                noteEditForm.Show();
+            }
         }
     }
 }

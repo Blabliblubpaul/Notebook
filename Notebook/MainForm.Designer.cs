@@ -23,27 +23,23 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.newNoteBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // newNoteBtn
             // 
-            this.newNoteBtn.Location = new System.Drawing.Point(1025, 751);
+            resources.ApplyResources(this.newNoteBtn, "newNoteBtn");
             this.newNoteBtn.Name = "newNoteBtn";
-            this.newNoteBtn.Size = new System.Drawing.Size(241, 81);
-            this.newNoteBtn.TabIndex = 0;
-            this.newNoteBtn.Text = "New Note";
             this.newNoteBtn.UseVisualStyleBackColor = true;
             this.newNoteBtn.Click += new System.EventHandler(this.newNoteBtn_Click);
             // 
-            // Form1
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 844);
             this.Controls.Add(this.newNoteBtn);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnClose);
             this.ResumeLayout(false);
 

@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.nameBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // saveBtn
@@ -47,11 +48,23 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // nameBox
+            // 
+            this.nameBox.DetectUrls = false;
+            this.nameBox.Location = new System.Drawing.Point(29, 28);
+            this.nameBox.Multiline = false;
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(612, 133);
+            this.nameBox.TabIndex = 1;
+            this.nameBox.Text = "Name:";
+            this.nameBox.WordWrap = false;
+            // 
             // NoteEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 844);
+            this.Controls.Add(this.nameBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
             this.Name = "NoteEditForm";
@@ -65,5 +78,6 @@
 
         private Button saveBtn;
         private Button cancelBtn;
+        private RichTextBox nameBox;
     }
 }

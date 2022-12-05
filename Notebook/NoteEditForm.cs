@@ -16,23 +16,26 @@ namespace Notebook {
 
         private void saveBtn_Click(object sender, EventArgs e) {
             this.Hide();
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-            this.Close();
+            try {
+                Common.GetFormByName("MainForm").Show();
+            }
+            catch { }
         }
 
         private void cancelBtn_Click(object sender, EventArgs e) {
             this.Hide();
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-            this.Close();
+            try {
+                Common.GetFormByName("MainForm").Show();
+            }
+            catch { }
         }
 
         private void NoteEditForm_FormClosed(object sender, FormClosedEventArgs e) {
             this.Hide();
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-            this.Close();
+            try {
+                Common.GetFormByName("MainForm").Show();
+            }
+            catch { }
         }
     }
 }
