@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Notebook {
+﻿namespace Notebook {
     public static class Common {
 
         public static bool FormExists(string formName) {
@@ -16,7 +10,7 @@ namespace Notebook {
             return false;
         }
 
-        public static Form? GetFormByName(string formName) {
+        public static Form GetFormByName(string formName) {
             foreach (Form frm in Application.OpenForms) {
                 if (frm.Name == formName) {
                     return frm;

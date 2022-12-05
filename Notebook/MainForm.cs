@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 namespace Notebook {
     public partial class MainForm : Form {
         NoteEditForm noteEditForm = new NoteEditForm();
