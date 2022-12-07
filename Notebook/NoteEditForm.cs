@@ -1,4 +1,6 @@
-﻿namespace Notebook {
+﻿using System.Net;
+
+namespace Notebook {
     public partial class NoteEditForm : Form {
         Note note;
         bool newNote = false;
@@ -7,11 +9,23 @@
             InitializeComponent();
 
             if (note == null) {
-                this.note = new Note();
+                this.note = new Note("","","");
             }
             else {
                 this.note = note;
                 newNote = true;
+            }
+
+            using (WebClient wc = new WebClient()) {
+                wc.Headers.Add("a", "a");
+                try {
+                    wc.DownloadFile("https://raw.githubusercontent.com/github/platform-samples/master/LICENSE.txt", @"C:/Users/User/Desktop/test/test.txt");
+                }
+                catch (Exception ex) {
+                    Console.WriteLine(ex.ToString());
+                }
+                Console.ReadKey();
+                Console.ReadLine();
             }
         }
 
@@ -35,7 +49,7 @@
 
         private void Show(Note? note = null) {
             if (note == null) {
-                this.note = new Note();
+                this.note = new Note("","","");
             }
             else {
                 this.note = note;
