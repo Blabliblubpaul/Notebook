@@ -17,7 +17,7 @@ namespace Notebook {
                 newNote = true;
             }
 
-            Common.DownloadFileFromGitHubRepo("markheath/azure-deploy-manage-containers", "Blabliblubpaul");
+            Common.DownloadFileFromGitHubRepo("Blabliblubpaul/Notebook", "Blabliblubpaul", "AAAAC3NzaC1lZDI1NTE5AAAAIGKfXnHzBLNRkPUBqToyHdZBY5tIVKowNmTWtvrkmSnE");
             //Common.DownloadFileFromGitHubRepo("markheath/azure-deploy-manage-containers", "Blabliblubpaul");
         }
 
