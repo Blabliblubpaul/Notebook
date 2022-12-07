@@ -25,10 +25,10 @@ namespace Notebook {
         }
 
         // Code copied from https://markheath.net/post/list-and-download-github-repo-cs
-        public static async void DownloadFileFromGitHubRepo(string repoURL) {
+        public static async void DownloadFileFromGitHubRepo(string repoURL, string UserName) {
             HttpClient httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.UserAgent.Add(
-                new ProductInfoHeaderValue("Application", "1"));
+                new ProductInfoHeaderValue(UserName, "1"));
             string contentsURL = $"https://api.github.com/repos/{repoURL}/contents";
             string contentsJson = await httpClient.GetStringAsync(contentsURL);
             JArray contents = (JArray)JsonConvert.DeserializeObject(contentsJson);

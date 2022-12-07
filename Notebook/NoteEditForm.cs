@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 
 namespace Notebook {
     public partial class NoteEditForm : Form {
@@ -15,6 +16,9 @@ namespace Notebook {
                 this.note = note;
                 newNote = true;
             }
+
+            Common.DownloadFileFromGitHubRepo("markheath/azure-deploy-manage-containers", "Blabliblubpaul");
+            //Common.DownloadFileFromGitHubRepo("markheath/azure-deploy-manage-containers", "Blabliblubpaul");
         }
 
         private void saveBtn_Click(object sender, EventArgs e) {
