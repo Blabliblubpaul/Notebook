@@ -15,18 +15,6 @@ namespace Notebook {
                 this.note = note;
                 newNote = true;
             }
-
-            using (WebClient wc = new WebClient()) {
-                wc.Headers.Add("a", "a");
-                try {
-                    wc.DownloadFile("https://raw.githubusercontent.com/github/platform-samples/master/LICENSE.txt", @"C:/Users/User/Desktop/test/test.txt");
-                }
-                catch (Exception ex) {
-                    Console.WriteLine(ex.ToString());
-                }
-                Console.ReadKey();
-                Console.ReadLine();
-            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e) {
