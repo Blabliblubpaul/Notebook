@@ -7,7 +7,7 @@
             InitializeComponent();
 
             if (note == null) {
-                this.note = new Note();
+                this.note = new Note("", "", "");
             }
             else {
                 this.note = note;
@@ -35,7 +35,7 @@
 
         private void Show(Note? note = null) {
             if (note == null) {
-                this.note = new Note();
+                this.note = new Note("", "", "");
             }
             else {
                 this.note = note;
