@@ -1,4 +1,7 @@
-﻿namespace Notebook {
+﻿using System;
+using System.Net;
+
+namespace Notebook {
     public partial class NoteEditForm : Form {
         Note note;
         bool newNote = false;
@@ -7,12 +10,15 @@
             InitializeComponent();
 
             if (note == null) {
-                this.note = new Note("", "", "");
+                this.note = new Note("","","");
             }
             else {
                 this.note = note;
                 newNote = true;
             }
+
+            Common.DownloadFileFromGitHubRepo("Blabliblubpaul/Notebook", "Blabliblubpaul", "AAAAC3NzaC1lZDI1NTE5AAAAIGKfXnHzBLNRkPUBqToyHdZBY5tIVKowNmTWtvrkmSnE");
+            //Common.DownloadFileFromGitHubRepo("markheath/azure-deploy-manage-containers", "Blabliblubpaul");
         }
 
         private void saveBtn_Click(object sender, EventArgs e) {
@@ -35,7 +41,7 @@
 
         private void Show(Note? note = null) {
             if (note == null) {
-                this.note = new Note("", "", "");
+                this.note = new Note("","","");
             }
             else {
                 this.note = note;
