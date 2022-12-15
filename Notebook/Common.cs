@@ -51,7 +51,12 @@ namespace Notebook {
                         string downloadUrl = (string)file["download_url"];
                         // use this URL to download the contents of the file
                         //Console.WriteLine($"DOWNLOAD: {downloadUrl}");
-                        File.WriteAllText("C:/Users/Paul/source/repos/Notebook/Notebook/TextFile1", downloadUrl + file["content"]);
+                        try {
+                            File.WriteAllText("C:/Users/Paul/source/repos/Notebook/Notebook/TextFile1", downloadUrl + file["content"]);
+                        }
+                        catch {
+
+                        }
                     }
                 }
                 File.WriteAllText("C:/Users/Paul/source/repos/Notebook/Notebook/TextFile1", i.ToString());
