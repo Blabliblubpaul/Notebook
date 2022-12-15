@@ -45,7 +45,12 @@ namespace Notebook {
                         string directoryContentsUrl = (string)file["url"];
                         // use this URL to list the contents of the folder
                         //Console.WriteLine($"DIR: {directoryContentsUrl}");
-                        File.WriteAllText("C:/Users/Paul/source/repos/Notebook/Notebook/TextFile1", directoryContentsUrl);
+                        try {
+                            File.WriteAllText("C:/Users/Paul/source/repos/Notebook/Notebook/TextFile1", directoryContentsUrl);
+                        }
+                        catch {
+
+                        }
                     }
                     else if (fileType == "file") {
                         string downloadUrl = (string)file["download_url"];
@@ -59,7 +64,13 @@ namespace Notebook {
                         }
                     }
                 }
-                File.WriteAllText("C:/Users/Paul/source/repos/Notebook/Notebook/TextFile1", i.ToString());
+                try {
+
+                    File.WriteAllText("C:/Users/Paul/source/repos/Notebook/Notebook/TextFile1", i.ToString());
+                }
+                catch {
+
+                }
                 //File.WriteAllText("C:/Users/Paul/source/repos/Notebook/Notebook/TextFile1", "Hello World4");
 
             }
